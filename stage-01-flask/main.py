@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/api")
 def get_parameters():
     param1 = request.args.get('slack_name')
-    param2 = request.args.get('param2')
+    param2 = request.args.get('track')
 
     if param1 is None or param2 is None:
         return jsonify({"error": "Both parameters (slack_name and track) are supposed to be passed in"}), 400
