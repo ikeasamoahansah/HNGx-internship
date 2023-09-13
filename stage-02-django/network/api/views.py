@@ -25,12 +25,12 @@ class CustomAuthToken(ObtainAuthToken):
 
 class UserList(APIView):
     """
-    List all users, or create a new user.
+    Create a new user.
     """
-    def get(self, request, format=None):
-        users = User.objects.all()
-        serializer = UserSerializer(users, many=True)
-        return Response(serializer.data)
+    # def get(self, request, format=None):
+    #     users = User.objects.all()
+    #     serializer = UserSerializer(users, many=True)
+    #     return Response(serializer.data)
 
     def post(self, request, format=None):
         serializer = UserSerializer(data=request.data)
@@ -39,7 +39,7 @@ class UserList(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     
 
 
@@ -68,4 +68,4 @@ class UserDetail(APIView):
         snippet.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
     
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
