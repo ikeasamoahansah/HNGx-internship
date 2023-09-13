@@ -49,3 +49,8 @@ The endpoints were all tested with authentication and tokens in the ```test.py``
 The results: 
 
 ![Screenshot from 2023-09-11 21-37-30](https://github.com/Me45y63/HNGx-internship/assets/66312028/93f34071-044d-4f72-ab9c-1a754a45067c)
+
+
+# For No Authentication
+
+Go through steps 1 - 4 and start testing with postman. Ciao.
